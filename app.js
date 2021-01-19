@@ -23,8 +23,13 @@ const renderFill = (index, range) =>  {
 }
 
 const activation = () => {
-    for(let step of steps) step.classList.remove('active');
-    for(let i = 0; i <= index; i++) steps[i].classList.add('active');
+    for(let i = 0; i < steps.length; i++) {
+        if(i <= index) {
+            steps[i].classList.add('active');
+        } else {
+            steps[i].classList.remove('active');
+        }
+    }
 }
 
 const setButtonState = () => {
