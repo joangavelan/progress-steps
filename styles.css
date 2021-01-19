@@ -21,6 +21,30 @@ body {
     text-align: center;
 }
 
+.ns-container {
+    width: max-content;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="number"] {
+    width: 25rem;
+    font-size: 2.4rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid #5eb2eb;
+    color: rgb(92, 92, 92);
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
 .progress-bar {
     background-color: #E0E0E0;
     position: absolute;
@@ -39,13 +63,15 @@ body {
     height: 4px;
 }
 
-.steps {
+.steps-container {
     position: relative;
-    width: 40rem;
+    margin: 3.5rem;
+}
+
+.steps {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3.5rem;
 }
 
 .step {
@@ -57,6 +83,10 @@ body {
     font-size: 1.5rem;
     color: #999;
     background-color: white;
+}
+
+.step:not(:first-child) {
+    margin-left: 7rem;
 }
 
 .active {
@@ -81,5 +111,19 @@ button {
 button:disabled {
     background-color: #E0E0E0;
     cursor: not-allowed;
+}
 
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 53%;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .step:not(:first-child) {
+        margin-left: 0;
+    }
 }
